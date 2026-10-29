@@ -1,0 +1,20 @@
+{
+  "name": "sdlc-pilot-target",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.8.0"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "node --test 'test/**/*.test.ts'",
+    "test:coverage": "c8 --include 'src/**/*.ts' --check-coverage --lines 80 --branches 70 node --test 'test/**/*.test.ts'",
+    "verify": "npm run typecheck && npm run test:coverage"
+  },
+  "devDependencies": {
+    "@types/node": "26.4.0",
+    "c8": "12.0.0",
+    "typescript": "7.0.2"
+  }
+}
